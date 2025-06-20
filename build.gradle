@@ -1,0 +1,25 @@
+   ```groovy
+   plugins { id 'java' }
+   group = 'com.brutallands'
+   version = '1.0'
+   sourceCompatibility = '17'
+
+   dependencies {
+     compileOnly 'org.spigotmc:spigot-api:1.21.5-R0.1-SNAPSHOT'
+     compileOnly 'com.github.retrooper.packetevents:Packetevents-Core:3.4.0'
+     compileOnly 'com.github.retrooper.packetevents:Packetevents-Bukkit:3.4.0'
+   }
+
+   repositories {
+     mavenCentral()
+     maven { url = uri('https://repo.papermc.io/repository/maven-public/') }
+     maven { url = uri('https://jitpack.io') }
+   }
+
+   jar {
+     archiveBaseName.set('FakeServerPlayers')
+     archiveVersion.set(version)
+     from { configurations.compileClasspath.collect { it.isDirectory()? it: zipTree(it) } }
+     exclude 'META-INF/*.RSA', 'META-INF/*.SF', 'META-INF/*.DSA'
+   }
+   ```
