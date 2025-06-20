@@ -1,0 +1,8 @@
+   ```yaml
+name: FakeServerPlayers
+main: com.brutallands.fakeserverplayers.FakeServerPlayers
+version: 1.0
+api-version: '1.13'
+depend:
+  - PacketEvents
+```
